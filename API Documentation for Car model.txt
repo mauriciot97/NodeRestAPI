@@ -1,0 +1,59 @@
+Description: Get all the cars from the database
+Endpoint: http://localhost:3002/api/v1/car/get-all-cars
+Method: GET
+Params: none
+Request Payload: none
+Response:
+{
+                "id": 4,
+                "make": "Nissan",
+                "model": "Maxima",
+                "year": "2018",
+                "user_id": 3,
+                "active": true,
+                "created_by": "mauriciot97",
+                "updated_by": null,
+                "created_at": "2020-04-07T20:42:04.605Z",
+                "updated_at": "2020-04-07T20:42:04.605Z",
+                "deleted_at": null,
+                "mileage": null,
+                "color": null
+            },
+            {
+                "id": 1,
+                "make": "Nissan",
+                "model": "Murano",
+                "year": "2015",
+                "user_id": 1,
+                "active": true,
+                "created_by": "mauriciot97",
+                "updated_by": "mauriciot97",
+                "created_at": "2020-04-07T20:40:39.382Z",
+                "updated_at": "2020-04-07T20:43:57.168Z",
+                "deleted_at": null,
+                "mileage": null,
+                "color": null
+            }
+---------------------------------------------------------------------------
+Description: Get a car by its ID from the database
+Endpoint: http://localhost:3002/api/v1/car/get-car-by-id
+Method: GET
+Params: id - the car id
+Request Payload: none
+Response:
+ {
+                "id": 1,
+                "make": "Nissan",
+                "model": "Murano",
+                "year": "2015",
+                "user_id": 1,
+                "active": true,
+                "created_by": "mauriciot97",
+                "updated_by": "mauriciot97",
+                "created_at": "2020-04-07T20:40:39.382Z",
+                "updated_at": "2020-04-07T20:43:57.168Z",
+                "deleted_at": null,
+                "mileage": null,
+                "color": null
+            }
+---------------------------------------------------------------------------
