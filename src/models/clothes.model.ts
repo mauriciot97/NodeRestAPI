@@ -36,6 +36,12 @@ export class Clothes {
                 callback: this.createClothes,
                 requireToken: true,
             },
+            {
+                route: '/update-clothes/id/:id',
+                method: 'PUT',
+                callback: this.updateClothes,
+                requireToken: true,
+              },
 
         ]
         ];
@@ -74,7 +80,13 @@ export class Clothes {
         }
     }
 
-
+    updateClothes(model: any) {
+        return async (req: Request, res: Response, next: NextFunction) => {
+          let clothesCtrl = model.controller;
+          let resp = await clothesCtrl.update(req, null, null);
+          res.json({ message: 'Success', resp });
+        }
+      }
 
     set model(model: any) {
         this._model = model;

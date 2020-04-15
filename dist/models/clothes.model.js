@@ -43,6 +43,12 @@ class Clothes {
                     callback: this.createClothes,
                     requireToken: true,
                 },
+                {
+                    route: '/update-clothes/id/:id',
+                    method: 'PUT',
+                    callback: this.updateClothes,
+                    requireToken: true,
+                },
             ]
         ];
     }
@@ -73,6 +79,13 @@ class Clothes {
         return (req, res, next) => __awaiter(this, void 0, void 0, function* () {
             let clothesCtrl = model.controller;
             let resp = yield clothesCtrl.insert(req, null, null);
+            res.json({ message: 'Success', resp });
+        });
+    }
+    updateClothes(model) {
+        return (req, res, next) => __awaiter(this, void 0, void 0, function* () {
+            let clothesCtrl = model.controller;
+            let resp = yield clothesCtrl.update(req, null, null);
             res.json({ message: 'Success', resp });
         });
     }

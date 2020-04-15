@@ -37,7 +37,12 @@ export class Car {
         callback: this.createCar,
         requireToken: true,
       },
-      
+      {
+        route: '/update-car/id/:id',
+        method: 'PUT',
+        callback: this.updateCar,
+        requireToken: true,
+      },
     ]
     ];
   }
@@ -45,8 +50,8 @@ export class Car {
   getAllCars(model: any) {
     return async (req: Request, res: Response, next: NextFunction) => {
       req.body = {
-          get: ["*"]
-        }
+        get: ["*"]
+      }
       let carCtrl = model.controller;
       let resp = await carCtrl.get(req, null, null);
       res.json({ message: 'Success', resp });
@@ -56,11 +61,11 @@ export class Car {
   getCarById(model: any) {
     return async (req: Request, res: Response, next: NextFunction) => {
       req.body = {
-          get: ["*"],
-          where: {
-            id: req.params.id
-          }
+        get: ["*"],
+        where: {
+          id: req.params.id
         }
+      }
       let carCtrl = model.controller;
       let resp = await carCtrl.get(req, null, null);
       res.json({ message: 'Success', resp });
@@ -71,6 +76,14 @@ export class Car {
     return async (req: Request, res: Response, next: NextFunction) => {
       let carCtrl = model.controller;
       let resp = await carCtrl.insert(req, null, null);
+      res.json({ message: 'Success', resp });
+    }
+  }
+
+  updateCar(model: any) {
+    return async (req: Request, res: Response, next: NextFunction) => {
+      let carCtrl = model.controller;
+      let resp = await carCtrl.update(req, null, null);
       res.json({ message: 'Success', resp });
     }
   }

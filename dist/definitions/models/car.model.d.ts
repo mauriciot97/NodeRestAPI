@@ -5,5 +5,6 @@ export declare class Car {
     getAllCars(model: any): (req: Request<import("../../../../../../Users/Mauricio/Desktop/RESTAPI/node_modules/@types/express-serve-static-core").ParamsDictionary>, res: Response<any>, next: NextFunction) => Promise<void>;
     getCarById(model: any): (req: Request<import("../../../../../../Users/Mauricio/Desktop/RESTAPI/node_modules/@types/express-serve-static-core").ParamsDictionary>, res: Response<any>, next: NextFunction) => Promise<void>;
     createCar(model: any): (req: Request<import("../../../../../../Users/Mauricio/Desktop/RESTAPI/node_modules/@types/express-serve-static-core").ParamsDictionary>, res: Response<any>, next: NextFunction) => Promise<void>;
+    updateCar(model: any): (req: Request<import("../../../../../../Users/Mauricio/Desktop/RESTAPI/node_modules/@types/express-serve-static-core").ParamsDictionary>, res: Response<any>, next: NextFunction) => Promise<void>;
     model: any;
 }

@@ -86,3 +86,32 @@ Response:
             "color": "Red"
         }
 ---------------------------------------------------------------------------
+Description: Update a car record
+Endpoint: http://localhost:3002/api/v1/car/update-car/id
+Method: PUT
+Params: id - the id of the car
+Request Payload:
+{
+	"make": "BMW",
+	"model": "325i",
+	"year": "2006",
+	"color": "white",
+	"mileage": "186,000"
+}
+Response:
+{
+            "id": 8,
+            "make": "BMW",
+            "model": "325i",
+            "year": "2006",
+            "user_id": null,
+            "active": true,
+            "created_by": "mauriciot97",
+            "updated_by": "mauriciot97",
+            "created_at": "2020-04-14T02:43:20.562Z",
+            "updated_at": "2020-04-14T02:48:55.116Z",
+            "deleted_at": null,
+            "mileage": "186,000",
+            "color": "white"
+        }
+---------------------------------------------------------------------------
