@@ -43,6 +43,12 @@ export class Car {
         callback: this.updateCar,
         requireToken: true,
       },
+      {
+        route: '/delete-car/id/:id',
+        method: 'DELETE',
+        callback: this.deleteCar,
+        requireToken: true,
+      },
     ]
     ];
   }
@@ -84,6 +90,14 @@ export class Car {
     return async (req: Request, res: Response, next: NextFunction) => {
       let carCtrl = model.controller;
       let resp = await carCtrl.update(req, null, null);
+      res.json({ message: 'Success', resp });
+    }
+  }
+
+  deleteCar(model: any) {
+    return async (req: Request, res: Response, next: NextFunction) => {
+      let carCtrl = model.controller;
+      let resp = await carCtrl.remove(req, null, null);
       res.json({ message: 'Success', resp });
     }
   }

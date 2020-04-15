@@ -49,6 +49,12 @@ class Clothes {
                     callback: this.updateClothes,
                     requireToken: true,
                 },
+                {
+                    route: '/delete-clothes/id/:id',
+                    method: 'DELETE',
+                    callback: this.deleteClothes,
+                    requireToken: true,
+                },
             ]
         ];
     }
@@ -86,6 +92,13 @@ class Clothes {
         return (req, res, next) => __awaiter(this, void 0, void 0, function* () {
             let clothesCtrl = model.controller;
             let resp = yield clothesCtrl.update(req, null, null);
+            res.json({ message: 'Success', resp });
+        });
+    }
+    deleteClothes(model) {
+        return (req, res, next) => __awaiter(this, void 0, void 0, function* () {
+            let clothesCtrl = model.controller;
+            let resp = yield clothesCtrl.remove(req, null, null);
             res.json({ message: 'Success', resp });
         });
     }

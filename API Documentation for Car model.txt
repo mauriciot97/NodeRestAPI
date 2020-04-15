@@ -115,3 +115,25 @@ Response:
             "color": "white"
         }
 ---------------------------------------------------------------------------
+Description: Delete a car record
+Endpoint: http://localhost:3002/api/v1/car/delete-car/id
+Method: DELETE
+Params: id - the id of the car
+Request Payload: None
+Response:
+{
+    "message": "Success",
+    "resp": {
+        "data": {
+            "command": "DELETE",
+            "rowCount": 1,
+            "oid": null,
+            "rows": [],
+            "fields": [],
+            "_parsers": [],
+            "RowCtor": null,
+            "rowAsArray": false
+        },
+        "statusCode": 200
+    }
+}

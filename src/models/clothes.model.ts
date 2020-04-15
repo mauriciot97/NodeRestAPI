@@ -42,6 +42,12 @@ export class Clothes {
                 callback: this.updateClothes,
                 requireToken: true,
               },
+              {
+                route: '/delete-clothes/id/:id',
+                method: 'DELETE',
+                callback: this.deleteClothes,
+                requireToken: true,
+              },
 
         ]
         ];
@@ -84,6 +90,14 @@ export class Clothes {
         return async (req: Request, res: Response, next: NextFunction) => {
           let clothesCtrl = model.controller;
           let resp = await clothesCtrl.update(req, null, null);
+          res.json({ message: 'Success', resp });
+        }
+      }
+
+      deleteClothes(model: any) {
+        return async (req: Request, res: Response, next: NextFunction) => {
+          let clothesCtrl = model.controller;
+          let resp = await clothesCtrl.remove(req, null, null);
           res.json({ message: 'Success', resp });
         }
       }

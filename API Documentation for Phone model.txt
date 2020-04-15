@@ -101,3 +101,19 @@ Response:
             "deleted_at": null
         }
 ---------------------------------------------------------------------------
+Description: Delete a phone record
+Endpoint: http://localhost:3002/api/v1/phone/delete-phone/id/3
+Method: DELETE
+Params: id - the id of the phone
+Request Payload: none
+Response:
+{
+            "command": "DELETE",
+            "rowCount": 1,
+            "oid": null,
+            "rows": [],
+            "fields": [],
+            "_parsers": [],
+            "RowCtor": null,
+            "rowAsArray": false
+        }
