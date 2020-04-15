@@ -51,3 +51,28 @@ Response:
                 "deleted_at": null
             }
 ---------------------------------------------------------------------------
+Description: Create a new phone record
+Endpoint: http://localhost:3002/api/v1/phone/create-phone
+Method: POST
+Params: none
+Request Payload:
+{
+	"brand": "Nokia",
+	"model": "8.3 5G",
+	"color": "Black"
+}
+Response:
+{
+            "id": 3,
+            "brand": "Nokia",
+            "model": "8.3 5G",
+            "color": "Black",
+            "user_id": null,
+            "active": true,
+            "created_by": "mauriciot97",
+            "updated_by": null,
+            "created_at": "2020-04-15T21:22:27.878Z",
+            "updated_at": "2020-04-15T21:22:27.878Z",
+            "deleted_at": null
+        }
+---------------------------------------------------------------------------

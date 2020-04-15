@@ -57,3 +57,32 @@ Response:
                 "color": null
             }
 ---------------------------------------------------------------------------
+Description: Create a new car record
+Endpoint: http://localhost:3002/api/v1/car/create-car
+Method: POST
+Params: none
+Request Payload:
+{
+	"make": "Honda",
+	"model": "Civic",
+	"year": "2020",
+	"color": "Red",
+	"mileage": "0"
+}
+Response:
+{
+            "id": 9,
+            "make": "Honda",
+            "model": "Civic",
+            "year": "2020",
+            "user_id": null,
+            "active": true,
+            "created_by": "mauriciot97",
+            "updated_by": null,
+            "created_at": "2020-04-15T21:10:47.882Z",
+            "updated_at": "2020-04-15T21:10:47.882Z",
+            "deleted_at": null,
+            "mileage": "0",
+            "color": "Red"
+        }
+---------------------------------------------------------------------------

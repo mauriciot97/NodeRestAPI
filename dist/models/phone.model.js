@@ -42,18 +42,6 @@ class Phone {
                     callback: this.createPhone,
                     requireToken: true,
                 },
-                {
-                    route: '/update-phone/id/:id',
-                    method: 'PUT',
-                    callback: this.updatePhone,
-                    requireToken: true,
-                },
-                {
-                    route: '/delete-phone/id/:id',
-                    method: 'DELETE',
-                    callback: this.deletePhone,
-                    requireToken: true,
-                }
             ]
         ];
     }
@@ -77,20 +65,6 @@ class Phone {
             };
             let phoneCtrl = model.controller;
             let resp = yield phoneCtrl.get(req, null, null);
-            res.json({ message: 'Success', resp });
-        });
-    }
-    updatePhone(model) {
-        return (req, res, next) => __awaiter(this, void 0, void 0, function* () {
-            let phoneCtrl = model.controller;
-            let resp = yield phoneCtrl.update(req, null, null);
-            res.json({ message: 'Success', resp });
-        });
-    }
-    deletePhone(model) {
-        return (req, res, next) => __awaiter(this, void 0, void 0, function* () {
-            let phoneCtrl = model.controller;
-            let resp = yield phoneCtrl.remove(req, null, null);
             res.json({ message: 'Success', resp });
         });
     }

@@ -30,6 +30,12 @@ export class Clothes {
                 callback: this.getClothesById,
                 requireToken: true,
             },
+            {
+                route: '/create-clothes',
+                method: 'POST',
+                callback: this.createClothes,
+                requireToken: true,
+            },
 
         ]
         ];
@@ -56,6 +62,14 @@ export class Clothes {
             }
             let clothesCtrl = model.controller;
             let resp = await clothesCtrl.get(req, null, null);
+            res.json({ message: 'Success', resp });
+        }
+    }
+
+    createClothes(model: any) {
+        return async (req: Request, res: Response, next: NextFunction) => {
+            let clothesCtrl = model.controller;
+            let resp = await clothesCtrl.insert(req, null, null);
             res.json({ message: 'Success', resp });
         }
     }

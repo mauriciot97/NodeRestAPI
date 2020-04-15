@@ -31,6 +31,12 @@ export class Car {
         callback: this.getCarById,
         requireToken: true,
       },
+      {
+        route: '/create-car',
+        method: 'POST',
+        callback: this.createCar,
+        requireToken: true,
+      },
       
     ]
     ];
@@ -57,6 +63,14 @@ export class Car {
         }
       let carCtrl = model.controller;
       let resp = await carCtrl.get(req, null, null);
+      res.json({ message: 'Success', resp });
+    }
+  }
+
+  createCar(model: any) {
+    return async (req: Request, res: Response, next: NextFunction) => {
+      let carCtrl = model.controller;
+      let resp = await carCtrl.insert(req, null, null);
       res.json({ message: 'Success', resp });
     }
   }

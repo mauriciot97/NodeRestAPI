@@ -58,3 +58,30 @@ Response:
         "gender": "F"
     }
 ---------------------------------------------------------------------------
+Description: Create a new clothes record
+Endpoint: http://localhost:3002/api/v1/clothes/create-clothes
+Method: POST
+Request Payload:
+{
+	"brand": "Gucci",
+	"size": "S",
+	"gender": "F",
+	"color": "Brown"
+}
+Response: 
+{
+            "id": 3,
+            "brand": "Gucci",
+            "model": null,
+            "color": "Brown",
+            "user_id": null,
+            "active": true,
+            "created_by": "mauriciot97",
+            "updated_by": null,
+            "created_at": "2020-04-15T21:17:18.291Z",
+            "updated_at": "2020-04-15T21:17:18.291Z",
+            "deleted_at": null,
+            "size": "S",
+            "gender": "F"
+        }
+---------------------------------------------------------------------------

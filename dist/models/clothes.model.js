@@ -43,27 +43,8 @@ class Clothes {
                     callback: this.createClothes,
                     requireToken: true,
                 },
-                {
-                    route: '/update-clothes/id/:id',
-                    method: 'PUT',
-                    callback: this.updateClothes,
-                    requireToken: true,
-                },
-                {
-                    route: '/delete-clothes/id/:id',
-                    method: 'DELETE',
-                    callback: this.deleteClothes,
-                    requireToken: true,
-                }
             ]
         ];
-    }
-    createClothes(model) {
-        return (req, res, next) => __awaiter(this, void 0, void 0, function* () {
-            let clothesCtrl = model.controller;
-            let resp = yield clothesCtrl.insert(req, null, null);
-            res.json({ message: 'Success', resp });
-        });
     }
     getAllClothes(model) {
         return (req, res, next) => __awaiter(this, void 0, void 0, function* () {
@@ -88,17 +69,10 @@ class Clothes {
             res.json({ message: 'Success', resp });
         });
     }
-    updateClothes(model) {
+    createClothes(model) {
         return (req, res, next) => __awaiter(this, void 0, void 0, function* () {
             let clothesCtrl = model.controller;
-            let resp = yield clothesCtrl.update(req, null, null);
-            res.json({ message: 'Success', resp });
-        });
-    }
-    deleteClothes(model) {
-        return (req, res, next) => __awaiter(this, void 0, void 0, function* () {
-            let clothesCtrl = model.controller;
-            let resp = yield clothesCtrl.remove(req, null, null);
+            let resp = yield clothesCtrl.insert(req, null, null);
             res.json({ message: 'Success', resp });
         });
     }
